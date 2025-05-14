@@ -1,25 +1,94 @@
 # Final Project and Deployment
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-## Objectives
-Build a fully functional web application.
-Apply HTML, CSS, and JavaScript concepts learned.
-Deploy the project using GitHub Pages, Netlify, or Vercel.
+    <main>
+        <section class="hero">
+            <h1>Welcome to My Site</h1>
+        </section>
+    </main>
 
-## Instructions
-Choose one of the following project ideas:
-Blog Website: Implement a multi-page site with navigation.
-Ecommerce Website: Implement a multi-page site with navigation.
+    <footer>
+        <p>&copy; 2023 My Website</p>
+    </footer>
 
->[!NOTE]
-> - Include at least:
-> - A responsive design.
-> - JavaScript interactivity.
-> - A deployment link.
+    <script src="js/script.js"></script>
+</body>
+</html>
 
-## Tasks
 
-Create a well-structured HTML5 document.
-Use at least 5 different HTML elements.
-Ensure semantic correctness.
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+}
 
-Good luck and happy coding! 🚀💻
+/* Responsive Navigation */
+nav ul {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: #333;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Mobile First */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+}
+
+/* Hero Section */
+.hero {
+    min-height: 300px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('../images/hero-bg.jpg');
+    background-size: cover;
+    color: white;
+}
+
+// Form Validation (contact.html)
+document.querySelector('form').addEventListener('submit', (e) => {
+    const email = document.getElementById('email').value;
+    if (!email.includes('@')) {
+        e.preventDefault();
+        alert('Please enter a valid email!');
+    }
+});
+
+// Image Slider (home.html)
+let currentSlide = 0;
+function showSlide(index) {
+    const slides = document.querySelectorAll('.slider img');
+    slides.forEach((slide, i) => {
+        slide.style.display = i === index ? 'block' : 'none';
+    });
+}
+
+
+
+
